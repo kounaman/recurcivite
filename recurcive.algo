@@ -1,31 +1,29 @@
 ALGORITHME palindrome
-PROCUDURE monte(str1: STRING)
-    BEGIN 
-      IF(str1=" ") THEN
-        monte(str1-1);
-        Read(str1);
-      END_IF
-    END
-PROCUDURE descente(str2: STRING)
-    BEGIN
-        IF(str2=str1)THEN
-           Write(str2);
-           descente(str1-1);
-        END_IF
-    END
+PROCUDURE palin(str1,str2: STRING)
+BEGIN 
+  IF(str1=" ") THEN
+    Write(str1);
+    Read(str1);
+  END_IF
+  
+  IF(str2=str1)THEN
+    Write(str2);
+    Read(str2);
+  END_IF
+END
 VAR
   str1, str2 : STRING;
 BEGIN
      Write("Donner un mot:" );
      Read(str1);
-     Write("Le mot saisi ", str1, "est:");
-     monte(str1);
-     Write("Le mot saisi", str2, "est:");
-     descente(str2);
+     Write("Le mot saisi ", str1, "est:", str1);
+     Write("Donner un autre mot:" );
+     Read(str2);
+     Write("Le mot saisi", str2, "est:",str2);
      IF(str1=str2)THEN
        Write("le mot saisi",str1,"est palindrome");
      ELSE
-       Write("Le mot",str1, "n'est pas palindrome")
+       Write("Le mot saisi",str1, "n'est pas un palindrome")
      END_IF
 END
 
